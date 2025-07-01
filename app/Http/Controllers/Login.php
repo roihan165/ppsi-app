@@ -48,7 +48,7 @@ class Login extends Controller
         try {
             if (Auth::attempt($credentials, $request->filled('remember'))) {
                 $request->session()->regenerate();
-                return redirect()->intended('/dashboard')->with([
+                return redirect()->intended('/')->with([
                     'success' => 'Logged in successfully!',
                     'anak' => $anak, 
                 ]);
