@@ -44,12 +44,12 @@ Route::get('/test-email', function () {
     }
 });
 
-Route::get('/', function () {
-    return 'Laravel berhasil jalan di Railway!';
-});
+// Route::get('/', function () {
+//     return 'Laravel berhasil jalan di Railway!';
+// });
 
 
-// Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
+Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
 
 Route::get('/tentangKami',[TentangKamiController::class,'index'])->name('tentangKami');
 
