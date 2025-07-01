@@ -794,7 +794,6 @@
         document.getElementById('milestoneChecklist').addEventListener('submit', function(event) {
             event.preventDefault();
             
-            console.log(totalMonths);
             const selectedAnakNIK = document.getElementById('selectedChildId').value;
             // Ambil nilai dari input tersembunyi
             const childAgeMonths = parseFloat(document.getElementById('childAgeMonths').value); 
