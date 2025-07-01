@@ -7,7 +7,7 @@ use App\Http\Controllers\MonitoringGizi;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\Register;
 use App\Http\Controllers\Chart;
-use App\Http\Controllers\selfCheckingController;
+use App\Http\Controllers\SelfCheckingController;
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\SheetController;
 use App\Http\Controllers\AnakController;
