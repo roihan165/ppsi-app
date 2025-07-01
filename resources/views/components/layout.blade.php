@@ -411,7 +411,7 @@
             <span class="logo-text">TumbuhKu</span>
         </div>
         <div class="nav-links">
-            <a href="/dashboard"><button>Home</button></a>
+            <a href="{{route('dashboard')}}"><button>Home</button></a>
             <a href="https://www.halodoc.com/tanya-dokter/dr-gracia-deswita-natalya-fau-sp-a" target="_blank" rel="noopener noreferrer">
                 <button>Konsultasi</button></a>
             <a href="{{route('tentangKami')}}"><button>Tentang Kami</button></a>

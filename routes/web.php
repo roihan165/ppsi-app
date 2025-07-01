@@ -49,7 +49,7 @@ Route::get('/test-email', function () {
 // });
 
 
-Route::get('/dashboard', [Dashboard::class, 'index'])->name('dashboard');
+Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
 
 Route::get('/tentangKami',[TentangKamiController::class,'index'])->name('tentangKami');
 
