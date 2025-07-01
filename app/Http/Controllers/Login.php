@@ -23,15 +23,15 @@ class Login extends Controller
          // --- DEBUGGING LOGIN ---
         // $user = UserWeb::where('email', $credentials['email'])->first();
 
-        dd(
-            'Credentials Received (from form):', $credentials,
-            'User Retrieved from DB (should be UserWeb object):', $user,
-            'Is User Found:', (bool)$user, // true jika ditemukan, false jika null
-            'Password from DB (should be hashed):', $user ? $user->password : 'N/A (User not found)',
-            'Plain password from request:', $credentials['password'],
-            'Hash::check Result (should be TRUE if password matches):',
-            $user ? Hash::check($credentials['password'], $user->password) : 'N/A (User not found)'
-        );
+        // dd(
+        //     'Credentials Received (from form):', $credentials,
+        //     'User Retrieved from DB (should be UserWeb object):', $user,
+        //     'Is User Found:', (bool)$user, // true jika ditemukan, false jika null
+        //     'Password from DB (should be hashed):', $user ? $user->password : 'N/A (User not found)',
+        //     'Plain password from request:', $credentials['password'],
+        //     'Hash::check Result (should be TRUE if password matches):',
+        //     $user ? Hash::check($credentials['password'], $user->password) : 'N/A (User not found)'
+        // );
         // // --- AKHIR DEBUGGING LOGIN ---
         $anak = null;
         $user_NIK = Auth::user();
