@@ -11,13 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (Schema::hasTable('anak')) {
+            Schema::drop('anak');
+        }
         Schema::create('anak', function (Blueprint $table) {
-            $table->id('anakId');
-            $table->string('name');
-            $table->date('tanggalLahir');
-            $table->enum('jenisKelamin',['Laki-laki','Perempuan']);
-            $table->float('tinggi');
-            $table->float('berat');
+                $table->string('anak_NIK')->primary();
+                $table->string('user_nik')->nullable();
+                $table->string('name');
+                $table->date('tanggalLahir');
+                $table->enum('jenisKelamin',[0,1]);
+                $table->enum('usia',[0,1]);
+                $table->timestamps();
+                $table->foreign('user_nik')
+                  ->references('nik')
+                  ->on('user_webs')
+                  ->onDelete('cascade');
         });
     }
 

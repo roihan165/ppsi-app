@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class Dashboard extends Controller
 {
     public function index() {
+        // session(['user_id' => 5]);
+
         return view('dashboard',[
             'motorik' => '
             <ul>

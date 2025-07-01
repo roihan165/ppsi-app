@@ -1,77 +1,97 @@
 <x-layout title="Rekomendasi Menu Sehat">
     <!-- Bagian Perkembangan Anak -->
     <div class="growth-section">
-            <h2>Rekomendasi Menu Sehat</h2>
+            <h2>Rekomendasi Menu Sehat</h2><a href="https://drive.google.com/file/d/1o04fnO9fzCxxouteXCBiuSOCchi35kH2/view?usp=sharing" target="_blank"
+  rel="noopener noreferrer" download="Resep_MPASI_Anak.pdf">
+        <i class="fas fa-file-pdf"></i> Unduh Resep MPASI</a>
+    </a>
         <div class="growth-container">
-            <x-card title="Telur Orak Arik" image="{{('storage/Telur_orak_arik.jpg')}}" cardTitle="Bahan-bahan:" :bahan="$bahanTelor" >
-                <ul>Kandungan Gizi (Perkiraan):
-                    <li>Kalori: 100 kcal</li>
-                    <li>Protein: 6.7 g</li>
-                    <li>Lemak: 7.5 g</li>
-                    <li>Karbohidrat: 0.6 g</li>
-                    <li>Zat Besi: 0.9 mg</li>
-                    <li>Kolin: 147 mg</li>
-                    <li>Vitamin D: 41 IU</li>
-                    <li>Vitamin A: 270 IU</li>
-                    <li>Vitamin B12: 0.6 mcg</li>
-                </ul>
-            </x-card>
-                <div class="growth-card">
-                    <img src="{{asset('storage/roti_gandum_utuh.jpeg')}}" alt="4-6 Bulan">
-                    <h3>Roti Gandum Utuh (1 lembar)</h3>
-                    <p>
-                        <ul>Kandungan Gizi (Perkiraan):
-                            <li>Kalori: 70-80 kcal</li>
-                            <li>Protein: 3-4 g</li>
-                            <li>Karbohidrat: 12-15 g</li>
-                            <li>Serat: 2-3 g</li>
-                            <li>Zat Besi: 0.7–1.2 mg</li>
-                            <li>Vitamin B (folat, tiamin, dll.)</li>
-                        </ul>
-                    </p>
-                </div>
-                <div class="growth-card">
-                    <img src="{{asset('storage/pisang.jpeg')}}" alt="7-9 Bulan">
-                <h3>Pisang (½ buah pisang ukuran sedang)</h3>
-                <p>
-                        <ul>Kandungan Gizi (Perkiraan):
-                            <li>Kalori: 50 kcal</li>
-                            <li>Karbohidrat: 13 g</li>
-                            <li>Gula Alami: 7 g</li>
-                            <li>Serat: 15 g</li>
-                            <li>Kalium: 210 mg</li>
-                            <li>Vitamin C: 5 mg</li>    
-                            <li>Vitamin B6: 0.2 mg</li>
-                        </ul>
-                    </p>
-        </div>
-    <div class="growth-card">
-        <img src="{{asset('storage/yogurt.jpeg')}}" alt="10-12 Bulan">
-                    <h3>Yogurt Plain Full-Fat (½ cangkir)</h3>
-                    <p>
-                        <ul>Kandungan Gizi (Perkiraan):
-                            <li>Kalori: 80-100 kcal</li>
-                            <li>Protein: 4-5 g</li>
-                            <li>Lemak: 4-6 g</li>
-                            <li>Kalsium: 150–200 mg</li>
-                            <li>Probiotik (tergantung merek)</li>
-                            <li>Vitamin D (jika difortifikasi)</li>
-                        </ul>
-                    </p>
-                </div>
-                <div class="growth-card">
-                    <img src="{{asset('storage/daging_ayam_dada.jpeg')}}" alt="1-3 Tahun">
-                    <h3>Ayam Dada/Daging Ayam (¼ cangkir matang, cincang)</h3>
-                    <p>
-                        <ul>Kandungan Gizi (Perkiraan):
-                            <li>Kalori: 60-80 kcal</li>
-                            <li>Protein: 10-12 g</li>
-                            <li>Lemak: 2-4 g</li>
-                            <li>Zat Besi: 0.4–0.6 mg</li>
-                            <li>Mengandung Zinc, Vitamin B6, dan B12</li>
-                        </ul>
-                    </p>
-            </div>
+            <x-card
+                    title="Cara Pembuatan:" {{-- Ini akan jadi judul modal pop-up --}}
+                    image="{{ asset('storage/Resep_Bubur_Singkong_Isi_Ikan.png') }}"
+                    url="https://drive.google.com/file/d/1kiIbh3Q_7MTZUtVM0t_B-G8X-qjk5lSC/view?usp=sharing"
+                    cardTitle="Bubur Singkong Isi Ikan dan Ayam dengan Saus Jeruk" {{-- Ini akan jadi judul di dalam card --}}
+                    :bahan="$pembuatan['BuburSingkong']"
+                >
+                    {{-- Konten slot untuk card utama --}}
+                    <ul><b>Bahan Utama:</b>
+                        <li>75 gr singkong putih, rebus dan haluskan</li>
+                        <li>15 gr (2 sdm datar) daging ikan kembung cincang halus</li>
+                        <li>15 gr daging ayam cincang rebus</li>
+                        <li>250 ml air kaldu ayam</li>
+                        <li>5 gr (1 sdt) minyak kelapa</li>
+                        <li>20 gr (2 sdm) bayam segar, potong halus</li>
+                        <br>
+                        <b>Bumbu:</b>
+                        <li>1 lembar daun salam</li>
+                        <li>1 batang sereh</li>
+                        <br>
+                        <b>Bumbu Halus</b>
+                        <li>1 siung bawang merah</li>
+                        <li>1 siung bawang putih Buah</li>
+                        <li>100 gr (3 buah kecil) jeruk manis diambil sarinya</li>
+                    </ul>
+                </x-card>
+            <x-card
+                    title="Cara Pembuatan:" {{-- Ini akan jadi judul modal pop-up --}}
+                    image="{{ asset('storage/Resep_Bubur_Soto_Ayam.png') }}"
+                    url="https://drive.google.com/file/d/1T0Q_szhxKLjfh_x7gobDNtmF41vfIg0a/view?usp=sharing"
+                    cardTitle="Bubur Soto Ayam Santan" {{-- Ini akan jadi judul di dalam card --}}
+                    :bahan="$pembuatan['BuburSotoAyam']"
+                >
+                    {{-- Konten slot untuk card utama --}}
+                    <ul><b>Bahan Utama:</b>
+                        <li>60 gr (6 sdm) Nasi putih</li>
+                        <li>45 gr (4.5 sdm) Daging</li>
+                        <li>ayam cincang</li>
+                        <li>30 gr (1 buah kecil) Tahu</li>
+                        <li>30 gr (3 sdm) Labu siam</li>
+                        <li>15 gr (1.5 sdm) wortel</li>
+                        <li>1 lembar Salam</li>
+                        <li>1 batang Sereh</li>
+                        <li>1 lembar Daun jeruk</li>
+                        <li>5 gr (1 sdm) Minyak goreng</li>
+                        <li>30 ml (3 sdm) Santan</li>
+                        <li>300 ml Air kaldu ayam</li>
+                        <br>
+                        <b>Bumbu Halus:</b>
+                        <li>1 siung bawang merah</li>
+                        <li>1 siung bawang putih</li>
+                        <li>1 cm Kunyit</li>
+                        <li>1 cm Jahe</li>
+                        <br>
+                        <b>Buah:</b>
+                        <li>100 gr (3 buah kecil) Jeruk (diambil sarinya)</li>
+                    </ul>
+                </x-card>
+            <x-card
+                    title="Cara Pembuatan:" {{-- Ini akan jadi judul modal pop-up --}}
+                    image="{{ asset('storage/Resep_Bubur_Sup_Daging.png') }}"
+                    url="https://drive.google.com/file/d/1Z_MlTqoWGKnjWqwlZ2KAetPHg2jJytcN/view?usp=sharing"
+                    cardTitle="Bubur Sup Daging Kacang Merah" {{-- Ini akan jadi judul di dalam card --}}
+                    :bahan="$pembuatan['BuburSupDaging']"
+                >
+                    {{-- Konten slot untuk card utama --}}
+                    <ul><b>Bahan Utama:</b>
+                        <li>50 gr (6 sdm) nasi</li>
+                        <li>30 gr (3 sdm) daging ayam cincang</li>
+                        <li>25 gr (1/2 butir) telur ayam</li>
+                        <li>10 gr (1 sdm) buncis</li>
+                        <li>10 gr (1 sdm) wortel</li>
+                        <li>10 gr (1 sdm) kacang merah</li>
+                        <li>10 gr (1 batang) bawang daun</li>
+                        <li>1 batang seledri</li>
+                        <li>300 ml kaldu ayam</li>
+                        <li>2.5 gr (1/2 sdt) minyak untuk menumis.</li>
+                        <br>
+                        <b>Bumbu Halus:</b>
+                        <li>2 siung bawang merah</li>
+                        <li>2 siung bawang putih</li>
+                        <br>
+                        <b>Buah:</b>
+                        <li>100 gr (2 buah) Jeruk (diambil sarinya)</li>
+                    </ul>
+                </x-card>
         </div>
     </div>
 </x-layout>

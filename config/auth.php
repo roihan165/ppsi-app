@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'api' => [
+        'driver' => 'sanctum', // Ini memberitahu Laravel untuk menggunakan driver Sanctum
+        'provider' => 'users',  // Ini merujuk ke provider 'users' di bawah
+        ],
     ],
 
     /*
@@ -62,7 +66,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\UserWeb::class,
         ],
 
         // 'users' => [

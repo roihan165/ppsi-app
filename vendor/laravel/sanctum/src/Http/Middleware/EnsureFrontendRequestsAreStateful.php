@@ -5,6 +5,7 @@ namespace Laravel\Sanctum\Http\Middleware;
 use Illuminate\Routing\Pipeline;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class EnsureFrontendRequestsAreStateful
 {
@@ -17,6 +18,18 @@ class EnsureFrontendRequestsAreStateful
      */
     public function handle($request, $next)
     {
+        // --- SISIPKAN DD() DI SINI, DI BARIS PERTAMA METODE HANDLE ---
+        dd([
+            'request_url' => $request->fullUrl(),
+            'referer_domain' => parse_url($request->headers->get('referer'))['host'] ?? null,
+            'is_in_stateful_domains' => $this->inStatefulDomains($request->url()) || $this->inStatefulDomains($request->headers->get('referer')),
+            'has_session' => $request->hasSession(), // Apakah request ini memiliki sesi?
+            'session_id' => $request->hasSession() ? $request->session()->getId() : 'N/A', // ID sesi
+            'session_data_all' => $request->hasSession() ? session()->all() : 'N/A', // Data sesi lengkap
+            'is_authenticated_via_session_guard' => Auth::guard('web')->check(), // Apakah guard 'web' terautentikasi?
+            'cookie_header' => $request->headers->get('Cookie'), // Cookie yang diterima server
+            'xsrf_token_header' => $request->headers->get('X-XSRF-TOKEN'), // XSRF Token Header yang diterima server
+        ]);
         $this->configureSecureCookieSessions();
 
         return (new Pipeline(app()))->send($request)->through(

@@ -11,11 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (Schema::hasTable('user_webs')) {
+            Schema::drop('user_webs');
+        }
         Schema::create('user_webs', function (Blueprint $table) {
-            $table->id('userId');
+            $table->id('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('nik')->unique();
             $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
