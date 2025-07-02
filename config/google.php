@@ -55,8 +55,15 @@ return [
          * Path to service account json file. You can also pass the credentials as an array
          * instead of a file path.
          */
+        $path = storage_path('storage/app/google-service-account.json');
+
+        'file' => env('GOOGLE_SERVICE_ACCOUNT_JSON',$path),
+        // Decode dan simpan ke storage (hanya saat belum ada)
+        if (!file_exists($path)) {
+            $json = base64_decode(env('GOOGLE_SERVICE_ACCOUNT_BASE64'));
+            file_put_contents($path, $json);
+        }
         // 'file' => env('GOOGLE_SERVICE_ACCOUNT_JSON_LOCATION', ''),
-        'file' => json_decode(env('GOOGLE_SERVICE_ACCOUNT_JSON'),true),
     ],
 
     /*
