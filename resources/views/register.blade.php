@@ -20,9 +20,10 @@
                 <label for="nik" class="block text-sm font-medium text-gray-700" style="text-align: left;"><b>NIK:</b></label>
                 <input type="text" id="nik" name="nik" value="{{ old('nik') }}" 
                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                maxlength="16"
                 required 
                 placeholder="Masukkan NIK Anda">
-                <p class="text-gray-500 text-xs mt-1">Minimal 16 karakter.</p>
+                <p class="text-gray-500 text-xs mt-1">Harus 16 karakter.</p>
                 @error('nik')
                     <div class="error-message">{{ $message }}</div>
                 @enderror

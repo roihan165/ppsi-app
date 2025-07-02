@@ -3,7 +3,7 @@
         <x-form title="Form Anak" method="POST" action="/anakAdd">
             <div class="mb-4">
                     <label for="anak_NIK" style="text-align: left;"><b>NIK Anak:</b></label>
-                    <input type="text" id="anak_NIK" name="anak_NIK" required placeholder="Masukkan NIK Anak"
+                    <input type="text" id="anak_NIK" name="anak_NIK" maxlength="16" required placeholder="Masukkan NIK Anak"
                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     <p class="text-gray-500 text-xs mt-1">Harus 16 karakter.</p>
                     @error('anak_NIK')
