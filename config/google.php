@@ -56,7 +56,7 @@ return [
          * instead of a file path.
          */
 
-        'file' => env('GOOGLE_SERVICE_ACCOUNT_JSON_LOCATION', storage_path('storage/app/google-service-account.json'))
+        'file' => env('GOOGLE_SERVICE_ACCOUNT_JSON_LOCATION','/workspaces/ppsi-app/storage/app/google-service-account.json')
         // 'file' => env('GOOGLE_SERVICE_ACCOUNT_JSON_LOCATION', ''),
     ],
 
