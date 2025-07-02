@@ -56,7 +56,7 @@ return [
          * instead of a file path.
          */
         // 'file' => env('GOOGLE_SERVICE_ACCOUNT_JSON_LOCATION', ''),
-        'file' => env('GOOGLE_SERVICE_ACCOUNT_JSON'),
+        'file' => env('GOOGLE_SERVICE_ACCOUNT_CREDENTIALS'),
     ],
 
     /*
