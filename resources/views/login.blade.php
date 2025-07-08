@@ -1,6 +1,6 @@
 <x-layout title="Halaman Login">
     <div class="container">
-            @if ($errors->has('email'))
+            <!-- @if ($errors->has('email'))
                 <div class="text-danger">{{ $errors->first('email') }}</div>
             @endif
             @if ($errors->any())
@@ -9,7 +9,7 @@
                         <li>{{ $error }}</li>
                     @endforeach
                 </ul>
-            @endif
+            @endif -->
 
         <x-form title="Form Login" method="POST" action="{{route ('login')}}">
     

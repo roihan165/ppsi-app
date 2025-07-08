@@ -78,6 +78,7 @@
                     Submit
                 </button>
             </div>
+            <small> Harap Tunggu Selama 15 Menit untuk Update Grafik, Lalu Refresh Kembali Website!!! </small>
             @endauth
         </x-form>
     </div>
