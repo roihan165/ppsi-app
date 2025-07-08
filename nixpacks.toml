@@ -1,14 +1,26 @@
+[setup]
+nixPkgs = [
+  "php81.withExtensions (pe: pe.enabled ++ [])",
+  "nginx",
+  "libmysqlclient",
+  "php81Packages.composer",
+  "nodejs_18",
+  "npm-9_x"
+]
+
 [phases.setup]
-nixPkgs = ["coreutils"]
+cmds = [
+  "mkdir -p /var/log/nginx && mkdir -p /var/cache/nginx"
+]
 
 [phases.build]
 cmds = [
   "mkdir -p storage/app",
   "cp google-service-account.json storage/app/google-service-account.json",
-  "composer install",
+  "composer install --ignore-platform-reqs",
   "npm ci",
   "npm run build"
 ]
 
 [start]
-cmd = "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=3000"
+cmd = "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8080"
