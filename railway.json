@@ -1,0 +1,9 @@
+{
+	"build": {
+		"commands": [
+			"mkdir -p storage/app",
+			"cp google-service-account.json storage/app/google-service-account.json"
+		]
+	}
+
+}
