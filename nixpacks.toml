@@ -5,10 +5,10 @@ nixPkgs = ["coreutils"]
 cmds = [
   "mkdir -p storage/app",
   "cp google-service-account.json storage/app/google-service-account.json",
-  "composer install --ignore-platform-reqs",
+  "composer install",
   "npm ci",
   "npm run build"
 ]
 
 [start]
-cmd = "php artisan serve --host=0.0.0.0 --port=3000"
+cmd = "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=3000"
