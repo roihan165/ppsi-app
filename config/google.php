@@ -56,7 +56,7 @@ return [
          * instead of a file path.
          */
 
-        'file' => storage_path('app/google-service-account.json'),
+        'file' => storage_path(env('GOOGLE_SERVICE_ACCOUNT_CREDENTIALS')),
         // 'file' => env('GOOGLE_SERVICE_ACCOUNT_JSON_LOCATION', ''),
     ],
 
