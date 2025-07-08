@@ -44,6 +44,12 @@ Route::get('/test-email', function () {
     }
 });
 
+Route::get('/cek-json', function () {
+    $path = storage_path('app/google-service-account.json');
+    return file_exists($path) ? '✅ JSON tersedia' : '❌ JSON tidak ditemukan';
+});
+
+
 // Route::get('/', function () {
 //     return 'Laravel berhasil jalan di Railway!';
 // });

@@ -15,8 +15,6 @@ cmds = [
 
 [phases.build]
 cmds = [
-  "mkdir -p storage/app",
-  "cp google-service-account.json storage/app/google-service-account.json",
   "composer install --ignore-platform-reqs",
   "npm ci",
   "npm run build"
